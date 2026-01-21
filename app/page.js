@@ -81,7 +81,7 @@ export default function Home() {
           <p className={styles.ctaText}>
             Sorularınız ve teklif talepleriniz için uzman ekibimizle görüşün.
           </p>
-          <Link href="tel:+903123858558" className={`${styles.btnWhite} btn`}>
+          <Link href="tel:+903123858558" className="btn btn-primary">
             Bizi Arayın: 0 (312) 385-8558
           </Link>
         </div>
