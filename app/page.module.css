@@ -91,7 +91,7 @@
 }
 
 .ctaSection {
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   color: white;
   text-align: center;
   padding: 5rem 0;
@@ -107,13 +107,4 @@
   font-size: 1.25rem;
   margin-bottom: 2rem;
   opacity: 0.9;
-}
-
-.btnWhite {
-  background-color: white;
-  color: var(--primary-color);
-}
-
-.btnWhite:hover {
-  background-color: #f0f0f0;
 }

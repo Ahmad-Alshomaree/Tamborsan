@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -8,7 +9,14 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={`container ${styles.container}`}>
         <div className={styles.column}>
-          <h3 className={styles.title}>TAMBURSAN</h3>
+          <div style={{ marginBottom: '1rem' }}>
+            <Image
+              src="/logo-footer.png"
+              alt="Tambursan"
+              width={153}
+              height={57}
+            />
+          </div>
           <p className={styles.description}>
             Tambur Kaplama ve Kauçuk Kaplama İmalatı. Kalite ve güvenin adresi.
           </p>
@@ -18,7 +26,7 @@ export default function Footer() {
           <ul className={styles.links}>
             <li><Link href="/">Anasayfa</Link></li>
             <li><Link href="#corporate">Kurumsal</Link></li>
-            <li><Link href="#products">Ürünlerimiz</Link></li>
+            <li><Link href="#services">Ürünlerimiz</Link></li>
             <li><Link href="#contact">İletişim</Link></li>
           </ul>
         </div>
