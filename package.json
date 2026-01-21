@@ -1,0 +1,30 @@
+{
+  "name": "tamborsan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ahmad-Alshomaree/Tamborsan.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ahmad-Alshomaree/Tamborsan/issues"
+  },
+  "homepage": "https://github.com/Ahmad-Alshomaree/Tamborsan#readme",
+  "dependencies": {
+    "better-sqlite3": "^12.6.2",
+    "next": "^16.1.4",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
+  }
+}
