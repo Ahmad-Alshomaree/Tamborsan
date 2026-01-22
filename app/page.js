@@ -1,9 +1,19 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import styles from './page.module.css';
 
 export default function Home() {
-  const certificates = [1, 2, 3, 4, 5, 6];
+  const [certificates, setCertificates] = useState([]);
+
+  useEffect(() => {
+    fetch('/api/belgeler')
+      .then(res => res.json())
+      .then(data => setCertificates(data))
+      .catch(err => console.error(err));
+  }, []);
 
   return (
     <div>
@@ -72,11 +82,11 @@ export default function Home() {
           <h2 className={styles.sectionTitle}>Belgelerimiz</h2>
           <p style={{textAlign: 'center', marginBottom: '2rem'}}>Kalite standartlarımızı belgeleyen sertifikalarımız.</p>
           <div className={styles.documentsGrid}>
-            {certificates.map((num) => (
-              <div key={num} className={styles.documentItem}>
+            {certificates.map((cert) => (
+              <div key={cert.id} className={styles.documentItem}>
                 <Image
-                  src={`/certificates/belge${num}.jpg`}
-                  alt={`Belge ${num}`}
+                  src={cert.file_path}
+                  alt={cert.name}
                   width={300}
                   height={400}
                   style={{width: '100%', height: 'auto'}}

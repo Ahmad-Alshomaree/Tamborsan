@@ -8,6 +8,12 @@
     ],
     "[project]/app/services/yedek-parca/page": [
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/app/urunler/[product]/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/app/urunler/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ]
   },
   "appUsingSizeAdjust": true,
