@@ -17,11 +17,11 @@ export default function Header() {
       <div className={`container ${styles.container}`}>
         <div className={styles.logo}>
           <Link href="/">
-            <Image
-              src="/logo.png"
-              alt="Tambursan Logo"
-              width={153}
-              height={57}
+            <Image 
+              src="/logo.png" 
+              alt="Tambursan Logo" 
+              width={153} 
+              height={57} 
               priority
             />
           </Link>
@@ -31,7 +31,8 @@ export default function Header() {
         </button>
         <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}>
           <ul className={styles.navList}>
-            <li><Link href="#services" onClick={() => setIsMenuOpen(false)}>Hizmetlerimiz</Link></li>
+            <li><Link href="/" onClick={() => setIsMenuOpen(false)}>Anasayfa</Link></li>
+            <li><Link href="/services" onClick={() => setIsMenuOpen(false)}>Hizmetlerimiz</Link></li>
             <li><Link href="#contact" onClick={() => setIsMenuOpen(false)}>İletişim</Link></li>
           </ul>
         </nav>
