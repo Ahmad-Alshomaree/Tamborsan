@@ -22,6 +22,18 @@ export default function Footer() {
           </p>
         </div>
         <div className={styles.column}>
+          <h4 className={styles.subtitle}>Hızlı Linkler</h4>
+          <ul className={styles.links}>
+            <li><Link href="/">Anasayfa</Link></li>
+            <li><Link href="#corporate">Kurumsal</Link></li>
+            <li><Link href="#catalogs">E-Katalog</Link></li>
+            <li><Link href="#documents">Belgeler</Link></li>
+            <li><Link href="/services">Hizmetlerimiz</Link></li>
+            <li><Link href="/products">Ürünlerimiz</Link></li>
+            <li><Link href="#contact">İletişim</Link></li>
+          </ul>
+        </div>
+        <div className={styles.column}>
           <h4 className={styles.subtitle}>İletişim</h4>
           <p><strong>Telefon:</strong> 0 (312) 385-8558</p>
           <p><strong>E-posta:</strong> info@tambursan.com.tr</p>
@@ -46,6 +58,11 @@ export default function Footer() {
               </svg>
             </Link>
           </div>
+        </div>
+      </div>
+      <div className={styles.bottomBar}>
+        <div className="container">
+          <p>&copy; {currentYear} Tambursan. Tüm hakları saklıdır.</p>
         </div>
       </div>
     </footer>

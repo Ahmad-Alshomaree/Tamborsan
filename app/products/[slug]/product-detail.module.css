@@ -1,0 +1,128 @@
+.pageContainer {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.breadcrumb {
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.breadcrumb a {
+  color: #1A1A1A;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: #C69C2E;
+  text-decoration: underline;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 992px) {
+  .layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.imageSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mainImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mainImage {
+  object-fit: contain;
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 1rem;
+}
+
+.thumbWrapper {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.thumbImage {
+  object-fit: cover;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #1A1A1A;
+  margin-bottom: 1rem;
+  border-bottom: 3px solid #C69C2E;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1.3rem;
+  color: #1A1A1A;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.sectionText {
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.sectionList {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  color: #444;
+}
+
+.sectionList li {
+  margin-bottom: 0.5rem;
+}
+
+.contactCta {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border-left: 4px solid #C69C2E;
+}
+
+.contactCta p {
+  margin-bottom: 1rem;
+  font-weight: 500;
+}

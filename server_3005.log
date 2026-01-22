@@ -1,0 +1,10 @@
+
+> tamborsan@1.0.0 start
+> next start -p 3005
+
+▲ Next.js 16.1.4
+- Local:         http://localhost:3005
+- Network:       http://192.168.0.2:3005
+
+✓ Starting...
+✓ Ready in 298ms
