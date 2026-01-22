@@ -1,11 +1,9 @@
 {
   "/api/belgeler/route": "app/api/belgeler/route.js",
   "/api/category/route": "app/api/category/route.js",
-  "/api/urunler/[id]/route": "app/api/urunler/[id]/route.js",
+  "/api/hizmetler/route": "app/api/hizmetler/route.js",
   "/api/urunler/route": "app/api/urunler/route.js",
   "/page": "app/page.js",
   "/services/page": "app/services/page.js",
-  "/services/yedek-parca/page": "app/services/yedek-parca/page.js",
-  "/urunler/[product]/page": "app/urunler/[product]/page.js",
   "/urunler/page": "app/urunler/page.js"
 }

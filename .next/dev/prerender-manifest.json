@@ -1,1 +1,11 @@
-{"version":4,"routes":{"/urunler/rulo":{},"/urunler/takoz":{},"/urunler/siricilar":{},"/urunler/tambur":{},"/urunler/motor-redektor":{},"/urunler/mil":{},"/urunler/konveyoer-banti":{},"/urunler/kauck-yer-zeminleri":{},"/urunler/kaplama-cesitleri":{},"/urunler/hayvan-yataklari":{}},"dynamicRoutes":{"/urunler/[product]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/urunler/[product]","routeRegex":"^\\/urunler\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"2dd939a9a4a079400eb3806fb48fa693","previewModeSigningKey":"a6d49b35519ed8aea068d65b5fcdbffa07678f751234cab3a83e3f29dc5e03a5","previewModeEncryptionKey":"9558c8f6b82aabb8389dcf138b70d29ea2394bae01a8669dbc938cf98fc311b2"}}
+{
+  "version": 4,
+  "routes": {},
+  "dynamicRoutes": {},
+  "notFoundRoutes": [],
+  "preview": {
+    "previewModeId": "930cb65caddaad604a6a7413bcda53d9",
+    "previewModeSigningKey": "354629ef0fe6cb5cb6d60e6aa75503917e4a94521a97ac2caacd6fe9edee9ff7",
+    "previewModeEncryptionKey": "74f2b677255b1ca75920cfb1f6ecfaa23ae7d631ad8cbd24e88f89ad95af931b"
+  }
+}
