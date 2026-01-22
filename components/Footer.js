@@ -28,7 +28,7 @@ export default function Footer() {
             <li><Link href="#corporate">Kurumsal</Link></li>
             <li><Link href="#catalogs">E-Katalog</Link></li>
             <li><Link href="#documents">Belgeler</Link></li>
-            <li><Link href="#services">Hizmetlerimiz</Link></li>
+            <li><Link href="/services">Hizmetlerimiz</Link></li>
             <li><Link href="#contact">İletişim</Link></li>
           </ul>
         </div>
