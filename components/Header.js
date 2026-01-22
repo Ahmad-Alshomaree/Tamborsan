@@ -31,11 +31,7 @@ export default function Header() {
         </button>
         <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}>
           <ul className={styles.navList}>
-            <li><Link href="/" onClick={() => setIsMenuOpen(false)}>Anasayfa</Link></li>
-            <li><Link href="#corporate" onClick={() => setIsMenuOpen(false)}>Kurumsal</Link></li>
-            <li><Link href="#catalogs" onClick={() => setIsMenuOpen(false)}>E-Katalog</Link></li>
-            <li><Link href="#documents" onClick={() => setIsMenuOpen(false)}>Belgeler</Link></li>
-            <li><Link href="/services" onClick={() => setIsMenuOpen(false)}>Hizmetlerimiz</Link></li>
+            <li><Link href="#services" onClick={() => setIsMenuOpen(false)}>Hizmetlerimiz</Link></li>
             <li><Link href="#contact" onClick={() => setIsMenuOpen(false)}>İletişim</Link></li>
           </ul>
         </nav>
