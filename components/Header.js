@@ -34,6 +34,7 @@ export default function Header() {
             <li><Link href="/" onClick={() => setIsMenuOpen(false)}>Anasayfa</Link></li>
             <li><Link href="/services" onClick={() => setIsMenuOpen(false)}>Hizmetlerimiz</Link></li>
             <li><Link href="/urunler" onClick={() => setIsMenuOpen(false)}>Ürünlerimiz</Link></li>
+            <li><Link href="/galeri" onClick={() => setIsMenuOpen(false)}>Galeri</Link></li>
             <li><Link href="#contact" onClick={() => setIsMenuOpen(false)}>İletişim</Link></li>
           </ul>
         </nav>

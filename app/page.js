@@ -7,18 +7,49 @@ import styles from './page.module.css';
 
 export default function Home() {
   const [certificates, setCertificates] = useState([]);
+  const [catalogs, setCatalogs] = useState([]);
+  const [contact, setContact] = useState(null);
+  const [currentHeroImage, setCurrentHeroImage] = useState(0);
+
+  const heroImages = [
+    encodeURI('/Galary/Hero section/Adsız tasarım (7).jpg'),
+    encodeURI('/Galary/Hero section/kaucuk-kaplama-tahrik-tamburu-327_03_2018_10_02_03.jpg'),
+    encodeURI('/Galary/Hero section/orta-1.png'),
+    encodeURI('/Galary/Hero section/TAM KARŞI 6,7,8.jpg'),
+    encodeURI('/Galary/Hero section/tambur-kaplama-2.jpg')
+  ];
 
   useEffect(() => {
-    fetch('/api/belgeler')
-      .then(res => res.json())
-      .then(data => setCertificates(data))
-      .catch(err => console.error(err));
+    const interval = setInterval(() => {
+      setCurrentHeroImage((prev) => (prev + 1) % heroImages.length);
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [heroImages.length]);
+
+  useEffect(() => {
+    Promise.all([
+      fetch('/api/belgeler').then(res => res.json()),
+      fetch('/api/kataloglar').then(res => res.json()),
+      fetch('/api/iletisim').then(res => res.json())
+    ]).then(([certData, catalogData, contactData]) => {
+      setCertificates(certData);
+      setCatalogs(catalogData);
+      if (contactData.length > 0) {
+        setContact(contactData[0]);
+      }
+    }).catch(err => console.error(err));
   }, []);
 
   return (
     <div>
       {/* Hero Section */}
-      <section className={styles.hero}>
+      <section
+        className={styles.hero}
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${heroImages[currentHeroImage]})`
+        }}
+      >
         <div className="container">
           <h1 className={styles.heroTitle}>Kaliteli Tambur ve Kauçuk Kaplama Çözümleri</h1>
           <p className={styles.heroSubtitle}>
@@ -53,25 +84,37 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Intro Video Section */}
+      <section className={styles.introVideo}>
+        <div className="container">
+          <h2 className={styles.sectionTitle}>Çalışmalarımızın Bir Önizlemesi</h2>
+        </div>
+        <div className={styles.videoContainer}>
+          <video controls className={styles.video}>
+            <source src="/Galary/tambursan.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </section>
+
       {/* E-Catalog Section */}
       <section id="catalogs" className={`${styles.section} ${styles.catalogSection}`}>
         <div className="container">
           <h2 className={styles.sectionTitle}>E-Kataloglar</h2>
           <div className={styles.catalogButtons}>
-             <div className={styles.catalogCard}>
-                <h3>2022 Tambursan Kataloğu (TR)</h3>
-                <p style={{marginBottom: '1rem'}}>Ürün ve hizmetlerimizi detaylı incelemek için kataloğumuzu indirin.</p>
-                <Link href="https://www.tambursan.com.tr/tema/firma/uploads/kataloglar/dosya/tm2022-tr.pdf" target="_blank" className="btn btn-primary">
-                   İncele / İndir
-                </Link>
-             </div>
-             <div className={styles.catalogCard}>
-                <h3>2022 Tambursan Catalog (EN)</h3>
-                <p style={{marginBottom: '1rem'}}>Download our catalog to review our products and services in detail.</p>
-                <Link href="https://www.tambursan.com.tr/tema/firma/uploads/kataloglar/dosya/tm2022-eng.pdf" target="_blank" className="btn btn-primary">
-                   Review / Download
-                </Link>
-             </div>
+            {catalogs.length === 0 ? (
+              <p style={{textAlign: 'center', width: '100%'}}>Henüz katalog bulunmamaktadır.</p>
+            ) : (
+              catalogs.map((catalog) => (
+                <div key={catalog.id} className={styles.catalogCard}>
+                  <h3>{catalog.name}</h3>
+                  <p style={{marginBottom: '1rem'}}>{catalog.description || 'Ürün ve hizmetlerimizi detaylı incelemek için kataloğumuzu indirin.'}</p>
+                  <Link href={catalog.file_path} target="_blank" className="btn btn-primary">
+                    İncele / İndir
+                  </Link>
+                </div>
+              ))
+            )}
           </div>
         </div>
       </section>
@@ -104,8 +147,8 @@ export default function Home() {
           <p className={styles.ctaText}>
             Sorularınız ve teklif talepleriniz için uzman ekibimizle görüşün.
           </p>
-          <Link href="tel:+903123858558" className="btn btn-primary">
-            Bizi Arayın: 0 (312) 385-8558
+          <Link href={`tel:+90${contact?.phone_number?.replace(/\D/g, '')}`} className="btn btn-primary">
+            Bizi Arayın: {contact?.phone_number}
           </Link>
         </div>
       </section>
