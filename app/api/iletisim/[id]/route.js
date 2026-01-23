@@ -1,7 +1,7 @@
 import db from '../../../../lib/database';
 
 export async function GET(request, { params }) {
-  const { id } = params;
+  const { id } = await params;
 
   return new Promise((resolve, reject) => {
     db.get('SELECT * FROM İletişim WHERE id = ?', [id], (err, row) => {
@@ -17,7 +17,7 @@ export async function GET(request, { params }) {
 }
 
 export async function PUT(request, { params }) {
-  const { id } = params;
+  const { id } = await params;
   const { phone_label, phone_number, email_label, email_address, location_label, location, facebook_account, instagram_account, x_account } = await request.json();
 
   return new Promise((resolve, reject) => {
@@ -35,7 +35,7 @@ export async function PUT(request, { params }) {
 }
 
 export async function DELETE(request, { params }) {
-  const { id } = params;
+  const { id } = await params;
 
   return new Promise((resolve, reject) => {
     db.run('DELETE FROM İletişim WHERE id = ?', [id], function(err) {

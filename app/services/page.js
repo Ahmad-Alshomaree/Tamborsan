@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import styles from './services.module.css';
 
 export default function ServicesPage() {
@@ -56,6 +57,16 @@ export default function ServicesPage() {
             <div className={styles.textBlock}>
               <p>{selectedService.description}</p>
             </div>
+            {(() => {
+              const images = JSON.parse(selectedService.images || '[]');
+              return images.length > 0 ? (
+                <div className={styles.images}>
+                  {images.map((img, index) => (
+                    <Image key={index} src={img} alt={`${selectedService.name} ${index + 1}`} width={200} height={150} />
+                  ))}
+                </div>
+              ) : null;
+            })()}
           </>
         )}
       </div>

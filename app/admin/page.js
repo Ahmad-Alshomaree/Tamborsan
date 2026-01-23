@@ -533,18 +533,41 @@ function ServiceManager({ services, onSubmit, onEdit, onDelete }) {
       </form>
 
       <div className={styles.list}>
-        {services.map(service => (
-          <div key={service.id} className={styles.item}>
-            <div>
-              <h3>{service.name}</h3>
-              <p>{service.description}</p>
+        {services.map(service => {
+          const serviceImages = JSON.parse(service.images || '[]');
+          return (
+            <div key={service.id} className={styles.item}>
+              <div>
+                <h3>{service.name}</h3>
+                <p>{service.description}</p>
+                {serviceImages.length > 0 && (
+                  <div style={{ marginTop: '10px' }}>
+                    <small>Images: {serviceImages.length}</small>
+                    <div style={{ display: 'flex', gap: '5px', marginTop: '5px' }}>
+                      {serviceImages.slice(0, 3).map((image, index) => (
+                        <img
+                          key={index}
+                          src={image}
+                          alt={`${service.name} ${index + 1}`}
+                          style={{ width: '50px', height: '50px', objectFit: 'cover', borderRadius: '4px' }}
+                        />
+                      ))}
+                      {serviceImages.length > 3 && (
+                        <div style={{ width: '50px', height: '50px', background: '#f0f0f0', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '4px', fontSize: '12px' }}>
+                          +{serviceImages.length - 3}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
+              </div>
+              <div>
+                <button onClick={() => startEdit(service)}>Edit</button>
+                <button onClick={() => onDelete('hizmetler', service.id, 'Service')}>Delete</button>
+              </div>
             </div>
-            <div>
-              <button onClick={() => startEdit(service)}>Edit</button>
-              <button onClick={() => onDelete('hizmetler', service.id, 'Service')}>Delete</button>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

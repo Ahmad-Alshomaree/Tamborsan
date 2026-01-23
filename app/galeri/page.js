@@ -22,11 +22,20 @@ export default function Galeri() {
         console.error('Error fetching products:', err);
       });
 
-    // For now, we'll use static video data - this can be replaced with API call later
-    setVideos([
-      // Placeholder videos - you can add real video URLs here
-      // { id: 1, title: 'Üretim Sürecimiz', url: '/videos/production.mp4', thumbnail: '/videos/production-thumb.jpg' }
-    ]);
+    // Fetch videos from galeri
+    fetch('/api/galeri')
+      .then(res => res.json())
+      .then(data => {
+        const videoData = data.filter(item => item.type === 'video').map(item => ({
+          id: item.id,
+          title: item.title,
+          url: item.video_path
+        }));
+        setVideos(videoData);
+      })
+      .catch(err => {
+        console.error('Error fetching videos:', err);
+      });
 
     setLoading(false);
   }, []);
@@ -119,14 +128,16 @@ export default function Galeri() {
             <div className={styles.videoGrid}>
               {videos.map((video) => (
                 <div key={video.id} className={styles.videoItem}>
-                  <video
-                    controls
-                    poster={video.thumbnail}
+                  <iframe
+                    src={video.url}
+                    title={video.title}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
                     className={styles.videoPlayer}
-                  >
-                    <source src={video.url} type="video/mp4" />
-                    Tarayıcınız video etiketini desteklemiyor.
-                  </video>
+                    width="100%"
+                    height="315"
+                  ></iframe>
                   <h3 className={styles.videoTitle}>{video.title}</h3>
                 </div>
               ))}

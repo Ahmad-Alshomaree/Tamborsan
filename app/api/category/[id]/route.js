@@ -1,7 +1,7 @@
 import db from '../../../../lib/database';
 
 export async function GET(request, { params }) {
-  const { id } = params;
+  const { id } = await params;
 
   return new Promise((resolve, reject) => {
     db.get('SELECT * FROM Category WHERE id = ?', [id], (err, row) => {
@@ -17,7 +17,7 @@ export async function GET(request, { params }) {
 }
 
 export async function PUT(request, { params }) {
-  const { id } = params;
+  const { id } = await params;
   const { name, description } = await request.json();
 
   return new Promise((resolve, reject) => {
@@ -35,7 +35,7 @@ export async function PUT(request, { params }) {
 }
 
 export async function DELETE(request, { params }) {
-  const { id } = params;
+  const { id } = await params;
 
   return new Promise((resolve, reject) => {
     db.run('DELETE FROM Category WHERE id = ?', [id], function(err) {

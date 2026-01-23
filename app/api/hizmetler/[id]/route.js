@@ -3,7 +3,7 @@ import { writeFile } from 'fs/promises';
 import path from 'path';
 
 export async function GET(request, { params }) {
-  const { id } = params;
+  const { id } = await params;
 
   return new Promise((resolve, reject) => {
     db.get('SELECT * FROM Hizmetler WHERE id = ?', [id], (err, row) => {
@@ -19,7 +19,7 @@ export async function GET(request, { params }) {
 }
 
 export async function PUT(request, { params }) {
-  const { id } = params;
+  const { id } = await params;
 
   try {
     const formData = await request.formData();
@@ -68,7 +68,7 @@ export async function PUT(request, { params }) {
 }
 
 export async function DELETE(request, { params }) {
-  const { id } = params;
+  const { id } = await params;
 
   return new Promise((resolve, reject) => {
     db.run('DELETE FROM Hizmetler WHERE id = ?', [id], function(err) {

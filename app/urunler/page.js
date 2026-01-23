@@ -61,14 +61,21 @@ export default function Urunler() {
               <p>{selectedCategory.description}</p>
             </div>
             <div className={styles.grid}>
-              {categoryProducts.map((product) => (
-                <Link key={product.slug} href={`/urunler/${product.slug}`} className={styles.card}>
-                  <div className={styles.cardContent}>
-                    <h3>{product.name}</h3>
-                    <p>Ürün detayları için tıklayın</p>
-                  </div>
-                </Link>
-              ))}
+              {categoryProducts.map((product) => {
+                const images = product.images ? JSON.parse(product.images) : [];
+                const description = product.description ? product.description.substring(0, 150) + (product.description.length > 150 ? '...' : '') : '';
+                return (
+                  <Link key={product.slug} href={`/urunler/${product.slug}`} className={styles.card}>
+                    {images.length > 0 && (
+                      <img src={images[0]} alt={product.name} className={styles.cardImage} />
+                    )}
+                    <div className={styles.cardContent}>
+                      <h3>{product.name}</h3>
+                      <p>{description || 'Ürün detayları için tıklayın'}</p>
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
             {categoryProducts.length === 0 && <p>Bu kategoride ürün bulunmamaktadır.</p>}
           </>
