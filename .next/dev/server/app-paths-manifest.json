@@ -1,5 +1,4 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
   "/admin/page": "app/admin/page.js",
   "/api/belgeler/route": "app/api/belgeler/route.js",
   "/api/category/route": "app/api/category/route.js",
@@ -7,11 +6,5 @@
   "/api/hizmetler/route": "app/api/hizmetler/route.js",
   "/api/iletisim/route": "app/api/iletisim/route.js",
   "/api/kataloglar/route": "app/api/kataloglar/route.js",
-  "/api/urunler/[id]/route": "app/api/urunler/[id]/route.js",
-  "/api/urunler/route": "app/api/urunler/route.js",
-  "/galeri/page": "app/galeri/page.js",
-  "/page": "app/page.js",
-  "/services/page": "app/services/page.js",
-  "/urunler/[product]/page": "app/urunler/[product]/page.js",
-  "/urunler/page": "app/urunler/page.js"
+  "/api/urunler/route": "app/api/urunler/route.js"
 }

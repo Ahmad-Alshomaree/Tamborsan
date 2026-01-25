@@ -10,7 +10,8 @@ export default function AdminDashboard() {
     categories: [],
     services: [],
     catalogs: [],
-    documents: []
+    documents: [],
+    gallery: []
   });
   const [loading, setLoading] = useState(true);
 
@@ -20,20 +21,22 @@ export default function AdminDashboard() {
 
   const fetchAllData = async () => {
     try {
-      const [productsRes, categoriesRes, servicesRes, catalogsRes, documentsRes] = await Promise.all([
+      const [productsRes, categoriesRes, servicesRes, catalogsRes, documentsRes, galleryRes] = await Promise.all([
         fetch('/api/urunler'),
         fetch('/api/category'),
         fetch('/api/hizmetler'),
         fetch('/api/kataloglar'),
-        fetch('/api/belgeler')
+        fetch('/api/belgeler'),
+        fetch('/api/galeri')
       ]);
 
-      const [products, categories, services, catalogs, documents] = await Promise.all([
+      const [products, categories, services, catalogs, documents, gallery] = await Promise.all([
         productsRes.json(),
         categoriesRes.json(),
         servicesRes.json(),
         catalogsRes.json(),
-        documentsRes.json()
+        documentsRes.json(),
+        galleryRes.json()
       ]);
 
       setData({
@@ -41,7 +44,8 @@ export default function AdminDashboard() {
         categories,
         services,
         catalogs,
-        documents
+        documents,
+        gallery
       });
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -152,6 +156,12 @@ export default function AdminDashboard() {
         >
           Documents
         </button>
+        <button
+          className={activeTab === 'gallery' ? styles.active : ''}
+          onClick={() => setActiveTab('gallery')}
+        >
+          Gallery
+        </button>
       </div>
 
       <div className={styles.content}>
@@ -196,6 +206,163 @@ export default function AdminDashboard() {
             onDelete={handleDelete}
           />
         )}
+        {activeTab === 'gallery' && (
+          <GalleryManager
+            gallery={data.gallery}
+            onSubmit={handleSubmit}
+            onEdit={handleEdit}
+            onDelete={handleDelete}
+          />
+        )}
+      </div>
+    </div>
+  );
+}
+
+function GalleryManager({ gallery, onSubmit, onEdit, onDelete }) {
+  const [formData, setFormData] = useState({
+    title: '',
+    type: 'image',
+    video_path: '',
+    image: null
+  });
+  const [editingId, setEditingId] = useState(null);
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const submitData = new FormData();
+    submitData.append('title', formData.title);
+    submitData.append('type', formData.type);
+
+    if (formData.type === 'video') {
+      submitData.append('video_path', formData.video_path);
+    } else if (formData.type === 'image' && selectedFile) {
+      submitData.append('image', selectedFile);
+    }
+
+    try {
+      const url = editingId ? `/api/galeri?id=${editingId}` : '/api/galeri';
+      const method = editingId ? 'PUT' : 'POST';
+
+      const response = await fetch(url, {
+        method,
+        body: submitData
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        alert(`Gallery item ${editingId ? 'updated' : 'added'} successfully!`);
+        // Refresh the page to get updated data
+        window.location.reload();
+      } else {
+        const error = await response.json();
+        alert(`Error: ${error.error}`);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred');
+    }
+
+    setFormData({ title: '', type: 'image', video_path: '', image: null });
+    setSelectedFile(null);
+    setEditingId(null);
+  };
+
+  const startEdit = (item) => {
+    setFormData({
+      title: item.title,
+      type: item.type,
+      video_path: item.video_path || '',
+      image: null
+    });
+    setSelectedFile(null);
+    setEditingId(item.id);
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    setSelectedFile(file);
+  };
+
+  return (
+    <div>
+      <h2>Manage Gallery</h2>
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <input
+          type="text"
+          placeholder="Title"
+          value={formData.title}
+          onChange={(e) => setFormData({...formData, title: e.target.value})}
+          required
+        />
+        <select
+          value={formData.type}
+          onChange={(e) => setFormData({...formData, type: e.target.value})}
+          required
+        >
+          <option value="image">Image</option>
+          <option value="video">Video</option>
+        </select>
+
+        {formData.type === 'video' && (
+          <input
+            type="text"
+            placeholder="Video URL (YouTube embed)"
+            value={formData.video_path}
+            onChange={(e) => setFormData({...formData, video_path: e.target.value})}
+            required
+          />
+        )}
+
+        {formData.type === 'image' && (
+          <div>
+            <label htmlFor="galleryImage">Gallery Image:</label>
+            <input
+              type="file"
+              id="galleryImage"
+              accept="image/*"
+              onChange={handleFileChange}
+              required={!editingId}
+            />
+            {selectedFile && (
+              <small>Selected: {selectedFile.name}</small>
+            )}
+          </div>
+        )}
+
+        <button type="submit">{editingId ? 'Update' : 'Add'} Gallery Item</button>
+        {editingId && <button type="button" onClick={() => {setEditingId(null); setFormData({title:'',type:'image',video_path:'',image:null}); setSelectedFile(null);}}>Cancel</button>}
+      </form>
+
+      <div className={styles.list}>
+        {gallery.map(item => (
+          <div key={item.id} className={styles.item}>
+            <div>
+              <h3>{item.title}</h3>
+              <p>Type: {item.type}</p>
+              {item.type === 'image' && item.image_path && (
+                <div style={{ marginTop: '10px' }}>
+                  <img
+                    src={item.image_path}
+                    alt={item.title}
+                    style={{ width: '100px', height: '100px', objectFit: 'cover', borderRadius: '4px' }}
+                  />
+                </div>
+              )}
+              {item.type === 'video' && item.video_path && (
+                <div style={{ marginTop: '10px' }}>
+                  <small>Video URL: {item.video_path}</small>
+                </div>
+              )}
+            </div>
+            <div>
+              <button onClick={() => startEdit(item)}>Edit</button>
+              <button onClick={() => onDelete('galeri', item.id, 'Gallery item')}>Delete</button>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
