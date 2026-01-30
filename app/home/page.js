@@ -9,23 +9,11 @@ export default function Home() {
   const [certificates, setCertificates] = useState([]);
   const [catalogs, setCatalogs] = useState([]);
   const [contact, setContact] = useState(null);
-  const [currentHeroImage, setCurrentHeroImage] = useState(0);
 
-  const heroImages = [
-    encodeURI('/Galary/Hero section/Adsız tasarım (7).jpg'),
-    encodeURI('/Galary/Hero section/kaucuk-kaplama-tahrik-tamburu-327_03_2018_10_02_03.jpg'),
-    encodeURI('/Galary/Hero section/orta-1.png'),
-    encodeURI('/Galary/Hero section/TAM KARŞI 6,7,8.jpg'),
-    encodeURI('/Galary/Hero section/tambur-kaplama-2.jpg')
+  const productImages = [
+    '/products/1769150607267_image_0.png',
+    '/products/1769160598284_image_0.png'
   ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentHeroImage((prev) => (prev + 1) % heroImages.length);
-    }, 5000); // Change image every 5 seconds
-
-    return () => clearInterval(interval);
-  }, [heroImages.length]);
 
   useEffect(() => {
     Promise.all([
@@ -44,28 +32,34 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section
-        className={styles.hero}
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${heroImages[currentHeroImage]})`
-        }}
-      >
+      <section className={styles.hero}>
         <div className="container">
-          <div className={styles.welcomeBanner}>
-            <span className={styles.welcomeText}>Hoş Geldiniz</span>
+          <div className={styles.logoContainer}>
+            <Image
+              src="/logo.png"
+              alt="Tambursan Logo"
+              width={700}
+              height={233}
+              className={styles.heroLogo}
+            />
           </div>
-          <h1 className={styles.heroTitle}>Tambursan'a Hoş Geldiniz</h1>
           <p className={styles.heroSubtitle}>
-            Kaliteli tambur ve kauçuk kaplama çözümlerinde güvenilir partneriniz.
-            Sanayi ihtiyaçlarınıza yönelik yüksek performanslı üretim ve kaplama hizmetleri.
+            30 yılı aşan tecrübe ile sanayi sektöründe en kaliteli çözümlerini sunuyoruz. Tambur kaplama ve kauçuk işçiliğinde uzman ekibimiz, projelerinizi başarıya taşımak için hazırdır.
           </p>
-          <div className={styles.heroActions}>
-            <Link href="#corporate" className="btn btn-primary">
-              Hakkımızda Öğrenin
-            </Link>
-            <Link href="#catalogs" className="btn btn-secondary">
-              Ürünlerimizi İnceleyin
-            </Link>
+        </div>
+        <div className={styles.productSlider}>
+          <div className={styles.sliderContainer}>
+            {[...productImages, ...productImages].map((image, index) => (
+              <div key={index} className={styles.productSlide}>
+                <Image
+                  src={image}
+                  alt={`Product ${index % productImages.length + 1}`}
+                  width={250}
+                  height={150}
+                  style={{objectFit: 'cover', borderRadius: '8px'}}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>

@@ -24,41 +24,27 @@ export default function Welcome() {
   }, [heroImages.length]);
 
   return (
-    <div className={styles.welcomePage}>
-      <div className={styles.welcomeGrid}>
-        {/* Left Side - Text Content */}
-        <div className={styles.textSection}>
-          <div className={styles.logoContainer}>
-            <img src="/logo.png" alt="Tambursan Logo" className={styles.logo} />
-          </div>
-
-          <div className={styles.welcomeContent}>
-            <h1 className={styles.welcomeTitle}>Tambursan'a Hoş Geldiniz</h1>
-            <p className={styles.welcomeMessage}>
-              Kaliteli tambur ve kauçuk kaplama çözümlerinde güvenilir partneriniz.
-              Sanayi ihtiyaçlarınıza yönelik yüksek performanslı üretim ve kaplama hizmetleri sunuyoruz.
-            </p>
-
-            <div className={styles.welcomeActions}>
-              <Link href="/home" className="btn btn-primary">
-                Siteye Giriş
-              </Link>
-            </div>
-          </div>
-
-          <div className={styles.welcomeFooter}>
-            <p>TAMBURSAN İMALAT ve KAPLAMA SANAYİ</p>
-          </div>
+    <div
+      className={styles.welcomePage}
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${heroImages[currentImage]})`
+      }}
+    >
+      <div className={styles.welcomeContent}>
+        <div className={styles.logoContainer}>
+          <img src="/logo.png" alt="Tambursan Logo" className={styles.logo} />
         </div>
 
-        {/* Right Side - Rotating Images */}
-        <div className={styles.imageSection}>
-          <div
-            className={styles.heroImage}
-            style={{
-              backgroundImage: `url(${heroImages[currentImage]})`
-            }}
-          />
+        <h1 className={styles.welcomeTitle}>Tambursan'a Hoş Geldiniz</h1>
+        <p className={styles.welcomeMessage}>
+          Kaliteli tambur ve kauçuk kaplama çözümlerinde güvenilir partneriniz.
+          Sanayi ihtiyaçlarınıza yönelik yüksek performanslı üretim ve kaplama hizmetleri sunuyoruz.
+        </p>
+
+        <div className={styles.welcomeActions}>
+          <Link href="/home" className="btn btn-primary">
+            Siteye Giriş
+          </Link>
         </div>
       </div>
     </div>

@@ -28,12 +28,15 @@ export default function Footer() {
             <Image 
               src="/logo-footer.png" 
               alt="Tambursan" 
-              width={153} 
-              height={57} 
+              width={280} 
+              height={105} 
             />
           </div>
+          <p className={styles.description} style={{ marginBottom: '0.3rem' }}>
+            Tambur Kaplama ve Kauçuk Kaplama İmalatı.
+          </p>
           <p className={styles.description}>
-            Tambur Kaplama ve Kauçuk Kaplama İmalatı. Kalite ve güvenin adresi.
+            Kalite ve güvenin adresi.
           </p>
         </div>
         <div className={styles.column}>
@@ -66,6 +69,20 @@ export default function Footer() {
                 </svg>
               </Link>
             )}
+          </div>
+        </div>
+        <div className={styles.column}>
+          <h4 className={styles.subtitle}>Konum</h4>
+          <div className={styles.mapContainer}>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3060.0846471819356!2d32.7399191!3d39.9701205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d349c77005bcab%3A0x6fa679a04e4c1cf8!2s1200%20Ostim%20Industrial%20Sites%20Sokak%20No%3A84%2C%2006370%20Yenimahalle%2FAnkara!5e0!3m2!1sen!2str!4v1643000000000"
+              width="100%"
+              height="250"
+              style={{ border: 0, borderRadius: '8px' }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </div>

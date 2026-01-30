@@ -15,17 +15,16 @@
 }
 
 .hero {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
+  background: white;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   margin-bottom: 4rem;
-  color: white;
+  color: var(--secondary-color);
   position: relative;
+  padding-bottom: 220px; /* Space for the slider */
 }
 
 .welcomeBanner {
@@ -58,13 +57,13 @@
 .heroTitle {
   font-size: 3rem;
   font-weight: 800;
-  color: white;
+  color: var(--secondary-color);
   margin-bottom: 1rem;
 }
 
 .heroSubtitle {
   font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: #666;
   margin-bottom: 2rem;
   max-width: 600px;
   margin-left: auto;
@@ -212,54 +211,26 @@
 /* Welcome Page Styles */
 .welcomePage {
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.welcomeGrid {
-  display: grid;
-  grid-template-columns: 0.8fr 1.5fr;
-  width: 100%;
-  max-width: 1400px;
-  min-height: 80vh;
-  gap: 2rem;
   padding: 2rem;
 }
 
-.textSection {
+.welcomeContent {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.imageSection {
-  display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
-}
-
-.heroImage {
-  width: 100%;
-  height: 500px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 15px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  transition: transform 0.5s ease;
-}
-
-.heroImage:hover {
-  transform: scale(1.02);
+  text-align: center;
+  max-width: 900px;
+  z-index: 1;
 }
 
 .logoContainer {
@@ -267,7 +238,7 @@
 }
 
 .logo {
-  max-width: 350px;
+  max-width: 500px;
   height: auto;
   filter: brightness(0) invert(1);
   drop-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -301,40 +272,23 @@
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   opacity: 0.8;
   font-size: 0.9rem;
+  display: none;
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .welcomeGrid {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  .textSection {
-    order: 1;
-    padding: 2rem;
-  }
-
-  .imageSection {
-    order: 2;
-  }
-
-  .heroImage {
-    height: 300px;
-  }
-
   .welcomeTitle {
     font-size: 2.5rem;
   }
 }
 
 @media (max-width: 768px) {
-  .welcomeGrid {
+  .welcomePage {
     padding: 1rem;
   }
 
-  .textSection {
-    padding: 2rem 1.5rem;
+  .welcomeContent {
+    max-width: 100%;
   }
 
   .logo {
@@ -347,5 +301,93 @@
 
   .welcomeMessage {
     font-size: 1rem;
+  }
+}
+
+/* Hero Section Logo and Product Slider */
+.logoContainer {
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+}
+
+.heroLogo {
+  max-width: 600px;
+  height: auto;
+}
+
+.productSlider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  overflow: hidden;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* Custom Scrollbar Styling */
+.productSlider::-webkit-scrollbar {
+  height: 8px;
+}
+
+.productSlider::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.productSlider::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.productSlider::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
+
+.sliderContainer {
+  display: flex;
+  gap: 1rem;
+  animation: slide 20s linear infinite;
+  width: calc(250px * 4); /* Larger images for full screen effect */
+}
+
+.productSlide {
+  flex-shrink: 0;
+  width: 250px;
+  height: 150px;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive adjustments for hero */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 60vh;
+  }
+
+  .heroLogo {
+    max-width: 200px;
+  }
+
+  .productSlider {
+    height: 150px;
+  }
+
+  .productSlide {
+    width: 180px;
+    height: 120px;
+  }
+
+  .sliderContainer {
+    width: calc(180px * 4);
   }
 }
