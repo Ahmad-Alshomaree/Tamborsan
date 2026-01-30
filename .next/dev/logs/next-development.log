@@ -1,4 +1,48 @@
-[00:00:01.610] Server  LOG     ✓ Ready in 1102ms
-[00:00:02.890] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:03.286] Browser WARN    Image with src "/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:03.286] Browser WARN    Image with src "/logo-footer.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:01.430] Server  LOG     ✓ Ready in 960ms
+[00:00:06.764] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:16.149] Browser ERROR   In HTML, %s cannot be a child of <%s>.%s
+This will cause a hydration error.%s <html> main  
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:"/", ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/home" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.js">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <RootLayout>
+                        <html lang="tr">
+                          <body className="inter_396b...">
+>                           <main style={{flex:1}}>
+                              ...
+                                <SegmentViewNode type="layout" pagePath="home/layou...">
+                                  <SegmentTrieNode>
+                                  <link>
+                                  <script>
+                                  <script>
+                                  <script>
+                                  <HomeLayout>
+>                                   <html lang="tr">
+                  ...
+
+[00:00:16.149] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. main <html>
+[00:00:16.149] Browser ERROR   You are mounting a new %s component when a previous one has not first unmounted. It is an error to render more than one %s component at a time and attributes and children of these components will likely fail in unpredictable ways. Please only render a single instance of <%s> and if you need to mount a new one, ensure any previous ones have unmounted first. html html html
+[00:00:16.149] Browser ERROR   You are mounting a new %s component when a previous one has not first unmounted. It is an error to render more than one %s component at a time and attributes and children of these components will likely fail in unpredictable ways. Please only render a single instance of <%s> and if you need to mount a new one, ensure any previous ones have unmounted first. body body body
+[00:00:38.931] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:03.223] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:09.250] Server  LOG     ✓ Compiled in 20ms
+[00:04:45.733] Server  LOG     ✓ Compiled in 30ms
+[00:04:54.980] Server  LOG     ✓ Compiled in 30ms
+[00:05:03.694] Server  LOG     ✓ Compiled in 21ms
+[00:06:28.320] Server  LOG     ✓ Compiled in 20ms
+[00:06:36.842] Server  LOG     ✓ Compiled in 24ms
+[00:06:45.243] Server  LOG     ✓ Compiled in 8ms

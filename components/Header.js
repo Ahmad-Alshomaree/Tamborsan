@@ -16,12 +16,12 @@ export default function Header() {
     <header className={styles.header}>
       <div className={`container ${styles.container}`}>
         <div className={styles.logo}>
-          <Link href="/">
-            <Image 
-              src="/logo.png" 
-              alt="Tambursan Logo" 
-              width={153} 
-              height={57} 
+          <Link href="/home">
+            <Image
+              src="/logo.png"
+              alt="Tambursan Logo"
+              width={200}
+              height={75}
               priority
             />
           </Link>
@@ -31,11 +31,11 @@ export default function Header() {
         </button>
         <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}>
           <ul className={styles.navList}>
-            <li><Link href="/" onClick={() => setIsMenuOpen(false)}>Anasayfa</Link></li>
+            <li><Link href="/home" onClick={() => setIsMenuOpen(false)}>Anasayfa</Link></li>
             <li><Link href="/services" onClick={() => setIsMenuOpen(false)}>Hizmetlerimiz</Link></li>
             <li><Link href="/urunler" onClick={() => setIsMenuOpen(false)}>Ürünlerimiz</Link></li>
             <li><Link href="/galeri" onClick={() => setIsMenuOpen(false)}>Galeri</Link></li>
-            <li><Link href="#contact" onClick={() => setIsMenuOpen(false)}>İletişim</Link></li>
+            <li><Link href="/home#contact" onClick={() => setIsMenuOpen(false)}>İletişim</Link></li>
           </ul>
         </nav>
       </div>
