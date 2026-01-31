@@ -8,6 +8,7 @@
   "/api/urunler/route": "app/api/urunler/route.js",
   "/galeri/page": "app/galeri/page.js",
   "/home/page": "app/home/page.js",
+  "/iletisim/page": "app/iletisim/page.js",
   "/page": "app/page.js",
   "/services/page": "app/services/page.js",
   "/urunler/page": "app/urunler/page.js"

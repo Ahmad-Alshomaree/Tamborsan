@@ -1,7 +1,7 @@
 import db from '../../../../lib/database';
 
 export async function GET(request, { params }) {
-  const { id } = params;
+  const { id } = await params;
 
   return new Promise((resolve) => {
     db.get(
@@ -21,7 +21,7 @@ export async function GET(request, { params }) {
 }
 
 export async function PUT(request, { params }) {
-  const { id } = params;
+  const { id } = await params;
   try {
     const body = await request.json();
     const { image_path, title, description, alt_text, display_order, is_active } = body;
@@ -47,7 +47,7 @@ export async function PUT(request, { params }) {
 }
 
 export async function DELETE(request, { params }) {
-  const { id } = params;
+  const { id } = await params;
 
   return new Promise((resolve) => {
     db.run(
