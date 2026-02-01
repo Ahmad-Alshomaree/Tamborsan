@@ -1,12 +1,220 @@
-:root {
-  --primary-color: #C69C2E;
-  --primary-hover: #B08924;
-  --secondary-color: #1A1A1A;
-  --accent-color: #F5F5F5;
-  --text-color: #333;
-  --text-on-primary: #000000;
-  --bg-color: #fff;
-  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+
+  /* Fade in down animation */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-down {
+    animation: fadeInDown 1s ease-out forwards;
+  }
+
+  /* Animation delays */
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+  }
+
+  .animation-delay-800 {
+    animation-delay: 0.8s;
+  }
+
+  .animation-delay-1000 {
+    animation-delay: 1s;
+  }
+
+  /* Float animation for geometric shapes */
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+      transform: translateY(-20px) rotate(5deg);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float 8s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+
+  /* Slow pulse */
+  @keyframes pulseSlow {
+
+    0%,
+    100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 0.5;
+      transform: scale(1.05);
+    }
+  }
+
+  .animate-pulse-slow {
+    animation: pulseSlow 4s ease-in-out infinite;
+  }
+
+  /* Scroll animation for product slider */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+
+  /* Gradient animation for backgrounds */
+  @keyframes gradientShift {
+
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradientShift 15s ease infinite;
+  }
+
+  /* Glow pulse animation */
+  @keyframes glowPulse {
+
+    0%,
+    100% {
+      box-shadow: 0 0 20px rgba(198, 156, 46, 0.3),
+        0 0 40px rgba(198, 156, 46, 0.2),
+        0 0 60px rgba(198, 156, 46, 0.1);
+    }
+
+    50% {
+      box-shadow: 0 0 30px rgba(198, 156, 46, 0.5),
+        0 0 60px rgba(198, 156, 46, 0.3),
+        0 0 90px rgba(198, 156, 46, 0.2);
+    }
+  }
+
+  .animate-glow-pulse {
+    animation: glowPulse 3s ease-in-out infinite;
+  }
+
+  /* Shimmer effect */
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 3s infinite;
+    background: linear-gradient(to right,
+        transparent 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        transparent 100%);
+    background-size: 1000px 100%;
+  }
+
+  /* Scale up animation */
+  @keyframes scaleUp {
+    from {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .animate-scale-up {
+    animation: scaleUp 0.6s ease-out forwards;
+  }
+
+  /* Floating shapes with rotation */
+  @keyframes floatRotate {
+
+    0%,
+    100% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+      transform: translate(10px, -10px) rotate(5deg);
+    }
+
+    50% {
+      transform: translate(-5px, -20px) rotate(-5deg);
+    }
+
+    75% {
+      transform: translate(-10px, -10px) rotate(3deg);
+    }
+  }
+
+  .animate-float-rotate {
+    animation: floatRotate 20s ease-in-out infinite;
+  }
+
+  /* Slide in from bottom */
+  @keyframes slideInBottom {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-slide-in-bottom {
+    animation: slideInBottom 0.8s ease-out forwards;
+  }
 }
 
 * {
@@ -16,9 +224,9 @@
 }
 
 body {
-  font-family: var(--font-family);
-  color: var(--text-color);
-  background-color: var(--bg-color);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #333;
+  background-color: #fff;
   line-height: 1.6;
   display: flex;
   flex-direction: column;
@@ -30,65 +238,12 @@ a {
   color: inherit;
 }
 
-ul {
-  list-style: none;
+main {
+  flex: 1;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
-}
-
-header {
-  background: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-footer {
-  background: var(--secondary-color);
-  color: #fff;
-  padding: 2rem 0;
-  margin-top: auto;
-}
-
-button, .btn {
-  cursor: pointer;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  font-weight: bold;
-  transition: background 0.3s;
-}
-
-.btn-primary {
-  background: var(--primary-color);
-  color: var(--text-on-primary);
-}
-
-.btn-primary:hover {
-  background: var(--primary-hover);
-}
-
-.btn-secondary {
-  background: var(--secondary-color);
-  color: #fff;
-}
-
-.btn-secondary:hover {
-  background: #333;
-  color: #fff;
-}
-
-h1, h2, h3 {
-  margin-bottom: 1rem;
-  line-height: 1.2;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
+  padding: 0 1rem;
 }

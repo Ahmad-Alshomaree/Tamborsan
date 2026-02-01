@@ -1,44 +1,100 @@
-[00:00:01.288] Server  LOG     ✓ Ready in 919ms
-[00:00:04.862] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:12.186] Server  ERROR   Error: SQLITE_ERROR: near ")": syntax error
-[00:00:12.188] Server  ERROR   ⨯ "uncaughtException:" Error: SQLITE_ERROR: near ")": syntax error
-[00:00:12.189] Server  ERROR   ⨯ "uncaughtException: " Error: SQLITE_ERROR: near ")": syntax error
-[00:00:12.307] Browser WARN    Image with src "/products/1769160598284_image_0.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:12.475] Browser WARN    Image with src "/products/1769150607267_image_0.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:02:21.895] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:31.448] Browser WARN    Image with src "/products/1769150607267_image_0.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:02:31.448] Browser WARN    Image with src "/products/1769160598284_image_0.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:05:11.391] Server  LOG     ✓ Compiled in 26ms
-[00:05:34.352] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:05:52.001] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:43.994] Server  LOG     ✓ Compiled in 44ms
-[00:09:26.400] Browser WARN    Image with src "/products/1769150607267_image_0.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:09:26.400] Browser WARN    Image with src "/products/1769160598284_image_0.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:12:41.032] Server  LOG     ✓ Compiled in 48ms
-[00:13:43.198] Server  LOG     ✓ Compiled in 22ms
-[00:17:07.035] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:17:25.665] Browser WARN    Image with src "/products/1769150607267_image_0.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:17:25.665] Browser WARN    Image with src "/products/1769160598284_image_0.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:17:40.041] Server  LOG     ✓ Compiled in 26ms
-[00:17:41.966] Server  LOG     ✓ Compiled in 28ms
-[00:18:15.076] Server  LOG     ✓ Compiled in 30ms
-[00:18:39.352] Server  LOG     ✓ Compiled in 18ms
-[00:21:52.424] Server  LOG     ✓ Compiled in 125ms
-[00:23:02.666] Server  LOG     ✓ Compiled in 36ms
-[00:23:08.823] Server  ERROR   Error: SQLITE_ERROR: near ")": syntax error
-[00:23:08.824] Server  ERROR   ⨯ "uncaughtException:" Error: SQLITE_ERROR: near ")": syntax error
-[00:23:08.824] Server  ERROR   ⨯ "uncaughtException: " Error: SQLITE_ERROR: near ")": syntax error
-[00:25:00.401] Server  LOG     ✓ Compiled in 23ms
-[00:25:00.489] Browser WARN    Image with src "/logo.png" is using quality "100" which is not configured in images.qualities [70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 75]. Please update your config to [100, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:25:30.254] Server  LOG     ✓ Compiled in 68ms
-[00:25:40.880] Server  LOG     ✓ Compiled in 13ms
-[00:25:56.328] Server  WARN    Image with src "/logo.png" is using quality "100" which is not configured in images.qualities [70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 75]. Please update your config to [100, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:25:56.644] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:25:56.839] Browser WARN    Image with src "/logo.png" is using quality "100" which is not configured in images.qualities [70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 75]. Please update your config to [100, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 75].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:25:56.839] Browser WARN    Image with src "/products/1769150607267_image_0.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:25:56.839] Browser WARN    Image with src "/products/1769160598284_image_0.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:26:30.724] Server  LOG     ✓ Compiled in 15ms
-[00:26:37.087] Server  LOG     ✓ Compiled in 20ms
+[00:00:01.544] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:01.853] Server  LOG     ✓ Ready in 1324ms
+[00:00:08.781] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:33.002] Server  LOG     ✓ Compiled in 2.6s
+[00:02:48.218] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:53.640] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:02.849] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:47.390] Server  LOG     ✓ Compiled in 391ms
+[00:06:03.429] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:04.354] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="tr">
+                          <body
++                           className="inter_5972bc34-module__OU16Qa__className"
+-                           className="inter_5972bc34-module__OU16Qa__className antigravity-scroll-lock"
+                          >
+                  ...
+
+[00:06:25.868] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:26.559] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="tr">
+                          <body
++                           className="inter_5972bc34-module__OU16Qa__className"
+-                           className="inter_5972bc34-module__OU16Qa__className antigravity-scroll-lock"
+                          >
+                  ...
+
+[00:09:23.702] Server  LOG     ✓ Compiled in 658ms
+[00:11:06.106] Server  LOG     ✓ Compiled in 322ms
+[00:11:38.840] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:48.516] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:05.983] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:07.473] Browser WARN    Image with src "/products/1769160598284_image_0.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:17:52.678] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:53.769] Browser WARN    Image with src "/products/1769160598284_image_0.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:19:21.253] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:59.236] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/gallery/production-1.jpg" "received" null
+[00:19:59.240] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/gallery/products-1.jpg" "received" null
+[00:19:59.244] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/gallery/production-3.jpg" "received" null
+[00:19:59.247] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/gallery/production-2.jpg" "received" null
+[00:19:59.250] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/gallery/products-2.jpg" "received" null
